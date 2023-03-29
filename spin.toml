@@ -1,0 +1,17 @@
+spin_version = "1"
+authors = ["Opemipo Disu <46439130+coderoflagos@users.noreply.github.com>"]
+description = ""
+name = "sample-gen"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "sample-gen"
+source = "target/spin-http-js.wasm"
+exclude_files = ["**/node_modules"]
+allowed_http_hosts = ["https://some-random-api.ml"]
+files = ["src/index.html"]
+[component.trigger]
+route = "/..."
+[component.build]
+command = "npm run build"
